@@ -2,6 +2,9 @@
 Client Machine: [Raspberry Pi, Jetson nano, Ubuntu machine]
 Server Machine: Mac mini
 dataset: [MMASH, RRITSH, SmartCare]
+---
+
+---
 framework: [Flower, Python library (tensorflow, keras, scikit-learn, matplotlib, pandas, numpy)]
 ---
 
@@ -29,10 +32,11 @@ Create a new directory called `embedded-devices` with the following structure:
 embedded-devices
 ├── embeddedexample
 │   ├── __init__.py
-│   ├── client_app.py   # Defines your ClientApp
-│   ├── server_app.py   # Defines your ServerApp
-│   └── task.py         # Defines your model, training and data loading
-├── pyproject.toml      # Project metadata like dependencies and configs
+│   ├── client_app.py      # Defines your ClientApp
+│   ├── server_app.py      # Defines your ServerApp
+│   ├── task.py            # Defines your model, training and data loading
+│   └── preprocess.py      # Handles data preprocessing (e.g., scaling, windowing, cleaning)
+├── pyproject.toml         # Project metadata like dependencies and configs
 └── README.md
 ```
 
@@ -40,15 +44,17 @@ Install the dependencies defined in `pyproject.toml`.
 
 We initially implemented two client application both with Jetson nano and later on we used three heterogeneous clients Raspberry Pi, Jetson nano and Ubuntu machine. For each DL models we created separate subfolders. Copy and paste the subfolders for analysis on each model every time if you want to implement this. The structure should be like below 
 
+```shell
 embedded-devices
 ├── embeddedexample
 │   ├── __init__.py
-│   ├── client_app.py   # Defines your ClientApp
-│   ├── server_app.py   # Defines your ServerApp
-│   └── task.py         # Defines your model, training and data loading
-├── pyproject.toml      # Project metadata like dependencies and configs
+│   ├── client_app.py      # Defines your ClientApp
+│   ├── server_app.py      # Defines your ServerApp
+│   ├── task.py            # Defines your model, training and data loading
+│   └── preprocess.py      # Handles data preprocessing (e.g., scaling, windowing, cleaning)
+├── pyproject.toml         # Project metadata like dependencies and configs
 └── README.md
-
+```
 
 
 ### Launching the Flower `SuperLink`
