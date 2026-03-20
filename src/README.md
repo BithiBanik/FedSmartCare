@@ -42,7 +42,7 @@ embedded-devices
 
 Install the dependencies defined in `pyproject.toml`.
 
-We initially implemented two client application both with Jetson nano and later on we used three heterogeneous clients Raspberry Pi, Jetson nano and Ubuntu machine. For each DL models we created separate subfolders. Copy and paste the subfolders for analysis on each model every time if you want to implement this. The structure should be like below 
+We initially implemented two client application both with Jetson nano and later on we used three heterogeneous clients Raspberry Pi, Jetson nano and Ubuntu machine. For each DL models we created separate subfolders. Copy and paste the subfolders for analysis on each model every time if you want to implement this. Suppose, if you want to apply only Gru model, copy paste the files from Gru folder and make a structure like below in your server.IEEIEE 
 
 ```shell
 embedded-devices
